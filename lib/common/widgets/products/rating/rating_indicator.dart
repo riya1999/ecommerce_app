@@ -16,7 +16,7 @@ class TRatingBarIndicator extends StatelessWidget {
         rating: rating,
         itemSize: 20,
         unratedColor: TColors.gray,
-        itemBuilder: (_, __) => Icon(
+        itemBuilder: (_, __) => const Icon(
           Iconsax.star1,
           color: TColors.primary,
         ));

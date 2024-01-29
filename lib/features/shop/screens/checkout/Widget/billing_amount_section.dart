@@ -16,7 +16,7 @@ class TBillingAmountSection extends StatelessWidget {
             Text('\$256.0', style: Theme.of(context).textTheme.bodyMedium,)
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwIteams / 2 ,),
+        const SizedBox(height: TSizes.spaceBtwIteams / 2 ,),
 
         /// Shipping fee
         Row(
@@ -26,7 +26,7 @@ class TBillingAmountSection extends StatelessWidget {
             Text('\$6.0', style: Theme.of(context).textTheme.labelLarge ,)
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwIteams / 2 ,),
+        const SizedBox(height: TSizes.spaceBtwIteams / 2 ,),
 
         /// Tax fee
         Row(
@@ -37,7 +37,7 @@ class TBillingAmountSection extends StatelessWidget {
           ],
         ),
 
-        SizedBox(height: TSizes.spaceBtwIteams / 2 ,),
+        const SizedBox(height: TSizes.spaceBtwIteams / 2 ,),
 
         /// Order Total
         Row(

@@ -1,9 +1,6 @@
 import 'package:ecommerce_app/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_app/common/widgets/layouts/grid_layout.dart';
-import 'package:ecommerce_app/common/widgets/products/Products_cards/product_card_vertical.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/products/sortable/sortable_products.dart';
 
@@ -17,7 +14,7 @@ class AllProducts extends StatelessWidget {
         title: Text('Popular Products',style: Theme.of(context).textTheme.headlineMedium,),
         showBackArrow: true,
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
             padding: EdgeInsets.all(TSizes.defaultSpace),
             child: TSortableProducts()),

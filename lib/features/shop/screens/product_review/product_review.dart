@@ -31,14 +31,14 @@ class ProductReviewScreen extends StatelessWidget {
               ),
 
               /// Overall Product Rating
-              TOverallProductRating(),
-              TRatingBarIndicator(rating: 3.5,),
+              const TOverallProductRating(),
+              const TRatingBarIndicator(rating: 3.5,),
               Text("12,611",style: Theme.of(context).textTheme.bodySmall),
-              SizedBox(height: TSizes.spaceBtwSections),
+              const SizedBox(height: TSizes.spaceBtwSections),
 
               /// User Review list
-              UserReviewCard(),
-              UserReviewCard(),
+              const UserReviewCard(),
+              const UserReviewCard(),
             ],
           ),
         ),

@@ -20,26 +20,26 @@ class UserReviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                CircleAvatar(backgroundImage: AssetImage(TImages.user)),
-                SizedBox(
+                const CircleAvatar(backgroundImage: AssetImage(TImages.user)),
+                const SizedBox(
                   width: TSizes.spaceBtwIteams,
                 ),
                 Text('John Doe', style: Theme.of(context).textTheme.titleLarge)
               ],
             ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))
+            IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwIteams),
+        const SizedBox(height: TSizes.spaceBtwIteams),
 
         /// Review
         Row(
           children: [
-            TRatingBarIndicator(rating: 4),
+            const TRatingBarIndicator(rating: 4),
             Text('01 Nov, 2023', style: Theme.of(context).textTheme.bodyMedium)
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwIteams),
+        const SizedBox(height: TSizes.spaceBtwIteams),
         const ReadMoreText(
           'The User Interface of the app is quite intuitive. I was able to navigate and make purchases seamlessly. Great job !',
           trimLines: 1,
@@ -49,13 +49,13 @@ class UserReviewCard extends StatelessWidget {
           moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: TColors.primary),
           lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: TColors.primary),
         ),
-        SizedBox(height: TSizes.spaceBtwIteams),
+        const SizedBox(height: TSizes.spaceBtwIteams),
 
         /// Company Review
         TRoundedContainer(
           backgroundColor: dark ? TColors.darkerGray : TColors.gray,
           child: Padding(
-            padding: EdgeInsets.all(TSizes.md),
+            padding: const EdgeInsets.all(TSizes.md),
             child: Column(
               children: [
                 Row(
@@ -65,7 +65,7 @@ class UserReviewCard extends StatelessWidget {
                     Text("01 Nov ,2023", style: Theme.of(context).textTheme.bodyLarge,)
                   ],
                 ),
-                SizedBox(height: TSizes.spaceBtwIteams),
+                const SizedBox(height: TSizes.spaceBtwIteams),
                 const ReadMoreText(
                   'The User Interface of the app is quite intuitive. I was able to navigate and make purchases seamlessly. Great job !',
                   trimLines: 1,
@@ -80,7 +80,7 @@ class UserReviewCard extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: TSizes.spaceBtwSections),
+        const SizedBox(height: TSizes.spaceBtwSections),
 
       ],
     );

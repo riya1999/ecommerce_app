@@ -17,18 +17,18 @@ class TBillingAddressSection extends StatelessWidget {
         ),
         Row(
           children: [
-            Icon(Icons.phone, color: TColors.gray, size: 16,),
-            SizedBox(width: TSizes.spaceBtwIteams,),
+            const Icon(Icons.phone, color: TColors.gray, size: 16,),
+            const SizedBox(width: TSizes.spaceBtwIteams,),
             Text('+92-969-4893589',style: Theme.of(context).textTheme.bodyMedium,),
           ],
         ),
-        SizedBox(width: TSizes.spaceBtwIteams/2),
+        const SizedBox(width: TSizes.spaceBtwIteams/2),
         Row(
           children: [
-            Icon(Icons.location_history, color: TColors.gray, size: 16,),
-            SizedBox(width: TSizes.spaceBtwIteams,),
+            const Icon(Icons.location_history, color: TColors.gray, size: 16,),
+            const SizedBox(width: TSizes.spaceBtwIteams,),
             Text('South Laina, USA',style: Theme.of(context).textTheme.bodyMedium,softWrap: true,),
-            SizedBox(width: TSizes.spaceBtwIteams/2),
+            const SizedBox(width: TSizes.spaceBtwIteams/2),
           ],
         )
       ],

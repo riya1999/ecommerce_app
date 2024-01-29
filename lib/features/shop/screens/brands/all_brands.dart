@@ -1,7 +1,6 @@
 import 'package:ecommerce_app/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_app/common/widgets/brands/brand_card.dart';
 import 'package:ecommerce_app/common/widgets/layouts/grid_layout.dart';
-import 'package:ecommerce_app/common/widgets/products/sortable/sortable_products.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -24,16 +23,16 @@ class AllBrandScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
 
               /// Heading
-              TSectionHeading(
+              const TSectionHeading(
                 title: 'Brands',
                 showActionButton: false,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwIteams,
               ),
 

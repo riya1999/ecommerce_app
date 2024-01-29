@@ -20,7 +20,7 @@ class ProfileScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
               /// Profile Picture
@@ -28,40 +28,40 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    TCircularImage(image: TImages.user, width: 80,height: 80,),
-                    TextButton(onPressed: (){}, child: Text('Change Profile Picture'))
+                    const TCircularImage(image: TImages.user, width: 80,height: 80,),
+                    TextButton(onPressed: (){}, child: const Text('Change Profile Picture'))
                   ],
                 ),
               ),
               /// Heading a profile info
-              SizedBox(height: TSizes.spaceBtwIteams/2,),
-              Divider(),
-              SizedBox(height: TSizes.spaceBtwIteams),
-              TSectionHeading(title: 'Profile Information', showActionButton: false,),
-              SizedBox(height: TSizes.spaceBtwIteams),
+              const SizedBox(height: TSizes.spaceBtwIteams/2,),
+              const Divider(),
+              const SizedBox(height: TSizes.spaceBtwIteams),
+              const TSectionHeading(title: 'Profile Information', showActionButton: false,),
+              const SizedBox(height: TSizes.spaceBtwIteams),
 
               TProfileMenu(onPressed: () {  }, title: 'Name', value: 'Riya',),
               TProfileMenu(onPressed: () {  }, title: 'UserName', value: 'Riya',),
 
-              SizedBox(height: TSizes.spaceBtwIteams,),
-              Divider(),
-              SizedBox(height: TSizes.spaceBtwIteams,),
+              const SizedBox(height: TSizes.spaceBtwIteams,),
+              const Divider(),
+              const SizedBox(height: TSizes.spaceBtwIteams,),
 
               /// Heading a Personal Info
               const TSectionHeading(title: 'Personal Information', showActionButton: false,),
-              SizedBox(height: TSizes.spaceBtwIteams),
+              const SizedBox(height: TSizes.spaceBtwIteams),
 
               TProfileMenu(onPressed: () {  }, title: 'User ID', value: '45689',icon: Iconsax.copy,),
               TProfileMenu(onPressed: () {  }, title: 'E-mail', value: 'shahriya@gmail.com'),
               TProfileMenu(onPressed: () {  }, title: 'Phone-Number', value: '9876543219'),
               TProfileMenu(onPressed: () {  }, title: 'Gender', value: 'Female'),
               TProfileMenu(onPressed: () {  }, title: 'Date of Birth', value: '31 dec ,1999'),
-              Divider(),
-              SizedBox(height: TSizes.spaceBtwIteams,),
+              const Divider(),
+              const SizedBox(height: TSizes.spaceBtwIteams,),
               Center(
                 child: TextButton(
                   onPressed: (){},
-                  child: Text('Close Account', style: TextStyle(color: Colors.red),),
+                  child: const Text('Close Account', style: TextStyle(color: Colors.red),),
                 ),
               )
 

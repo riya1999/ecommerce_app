@@ -22,7 +22,7 @@ class TCartItem extends StatelessWidget {
           imageUrl: TImages.productImage2,
           height: 60,
           width: 60,
-          padding: EdgeInsets.all(TSizes.sm),
+          padding: const EdgeInsets.all(TSizes.sm),
           backgroundColor: THelperFunction.isDarkMode(context)
               ? TColors.darkerGray
               : TColors.light,
@@ -35,9 +35,9 @@ class TCartItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TBrandTitleWithVerificationIcon(
+              const TBrandTitleWithVerificationIcon(
                   title: 'Nike', textColor: TColors.darkGray),
-              Flexible(
+              const Flexible(
                 child: TProductTitleText(
                   title: 'Sport Shoes',
                   maxLines: 1,

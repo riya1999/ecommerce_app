@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                         /// Heading
                         TSectionHeading(
                           title: 'Popular Categories',
-                          onPressed: () => Get.to(() => AllProducts()),
+                          onPressed: () => Get.to(() => const AllProducts()),
                         ),
                         const SizedBox(
                           height: TSizes.spaceBtwIteams,

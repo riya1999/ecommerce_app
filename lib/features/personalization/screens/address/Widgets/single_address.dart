@@ -25,7 +25,7 @@ class TSingleAddress extends StatelessWidget {
           : dark
               ? TColors.darkerGray
               : TColors.gray,
-      margin: EdgeInsets.only(bottom: TSizes.spaceBtwIteams),
+      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwIteams),
       child: Stack(
         children: [
           Positioned(
@@ -49,10 +49,10 @@ class TSingleAddress extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: TSizes.sm / 2,),
-              Text('7865932165', maxLines: 1, overflow: TextOverflow.ellipsis,),
-              SizedBox(height: TSizes.sm / 2,),
-              Text('82356 Timmy covers , South Liana, Maine, 87665, USA', softWrap: true,)
+              const SizedBox(height: TSizes.sm / 2,),
+              const Text('7865932165', maxLines: 1, overflow: TextOverflow.ellipsis,),
+              const SizedBox(height: TSizes.sm / 2,),
+              const Text('82356 Timmy covers , South Liana, Maine, 87665, USA', softWrap: true,)
             ],
           )
         ],

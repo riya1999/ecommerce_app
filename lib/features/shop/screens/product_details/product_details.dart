@@ -1,13 +1,7 @@
-import 'package:ecommerce_app/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widgets.dart';
-import 'package:ecommerce_app/common/widgets/icons/t_circular_icon.dart';
-import 'package:ecommerce_app/common/widgets/images/t_rounded_image.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/Widgets/product_detail_image_slider.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/Widgets/rating_share_widget.dart';
-import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
-import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -23,29 +17,29 @@ class ProductDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: TBottomAddToCart(),
+      bottomNavigationBar: const TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(children: [
           /// Product Image Slider
-          TProductImageSlider(),
+          const TProductImageSlider(),
 
           /// Product Details
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
                 right: TSizes.defaultSpace,
                 left: TSizes.defaultSpace,
                 bottom: TSizes.defaultSpace),
             child: Column(
               children: [
                 /// - Rating & Share
-                TRatingShare(),
+                const TRatingShare(),
 
                 /// - Price, Title , stock & Brand
-                TProductMetaData(),
+                const TProductMetaData(),
 
                 /// -- Attributes
-                ProductAttributes(),
-                SizedBox(
+                const ProductAttributes(),
+                const SizedBox(
                   height: TSizes.spaceBtwSections,
                 ),
 
@@ -53,20 +47,20 @@ class ProductDetailsScreen extends StatelessWidget {
                 SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                        onPressed: () {}, child: Text('Checkout'))),
-                SizedBox(
+                        onPressed: () {}, child: const Text('Checkout'))),
+                const SizedBox(
                   height: TSizes.spaceBtwSections,
                 ),
 
                 /// Description
-                TSectionHeading(
+                const TSectionHeading(
                   title: 'Description',
                   showActionButton: false,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwIteams,
                 ),
-                ReadMoreText(
+                const ReadMoreText(
                   'bifocjdsojvojdsCML>M jvd ojodkpoc;l,lamslncvpsc;,;,x;ajdondcnxdnmpo',
                   trimLines: 2,
                   trimMode: TrimMode.Line,
@@ -79,8 +73,8 @@ class ProductDetailsScreen extends StatelessWidget {
                 ),
 
                 /// Reviews
-                Divider(),
-                SizedBox(
+                const Divider(),
+                const SizedBox(
                   height: TSizes.spaceBtwIteams,
                 ),
                 Row(
@@ -92,15 +86,15 @@ class ProductDetailsScreen extends StatelessWidget {
                       showActionButton: false,
                     ),
                     IconButton(
-                        onPressed: () => Get.to(() => ProductReviewScreen()),
-                        icon: Icon(
+                        onPressed: () => Get.to(() => const ProductReviewScreen()),
+                        icon: const Icon(
                           Iconsax.arrow_right_3,
                           size: 18,
                         ))
                   ],
                 ),
 
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwSections,
                 ),
               ],

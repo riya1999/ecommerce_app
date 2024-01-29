@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/common/styles/shadow.dart';
 import 'package:ecommerce_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:ecommerce_app/common/widgets/images/t_rounded_image.dart';
 import 'package:ecommerce_app/common/widgets/texts/product_price_text.dart';
@@ -20,7 +19,7 @@ class TProductCardHorizontal extends StatelessWidget {
     final dark = THelperFunction.isDarkMode(context);
     return Container(
       width: 310,
-      padding: EdgeInsets.all(0),
+      padding: const EdgeInsets.all(0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(TSizes.productImageRadius),
         color: dark ? TColors.darkerGray : TColors.lightContainer,
@@ -30,12 +29,12 @@ class TProductCardHorizontal extends StatelessWidget {
           /// Thumbnail
           TRoundedContainer(
             height: 120,
-            padding: EdgeInsets.all(TSizes.sm),
+            padding: const EdgeInsets.all(TSizes.sm),
             backgroundColor: dark ? TColors.dark : TColors.light,
             child: Stack(
               children: [
                 /// -- Thumbnail Image
-                TRoundedImage(
+                const TRoundedImage(
                   imageUrl: TImages.productImage2,
                   applyImageRadius: true,
                 ),
@@ -74,15 +73,15 @@ class TProductCardHorizontal extends StatelessWidget {
           SizedBox(
             width: 172,
             child: Padding(
-              padding: EdgeInsets.only(top: TSizes.sm, left: TSizes.sm),
+              padding: const EdgeInsets.only(top: TSizes.sm, left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      TProductTitleText(title: 'In the sky', smallSize: true),
-                      SizedBox(
+                      const TProductTitleText(title: 'In the sky', smallSize: true),
+                      const SizedBox(
                         height: TSizes.spaceBtwIteams / 2,
                       ),
                       TBrandTitleWithVerificationIcon(
@@ -91,23 +90,23 @@ class TProductCardHorizontal extends StatelessWidget {
                       )
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       /// Pricing
-                      Flexible(child: TProductPriceText(price: '256.0')),
+                      const Flexible(child: TProductPriceText(price: '256.0')),
 
                       /// Add to cart
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: TColors.dark,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(TSizes.cardRadiusLg),
                             bottomRight: Radius.circular(TSizes.productImageRadius)
                           )
                         ),
-                        child: SizedBox(
+                        child: const SizedBox(
                           width: TSizes.iconsLg *1.2,
                           height: TSizes.iconsLg *1.2,
                           child: Center(child: Icon(Icons.add,color: TColors.white,),),

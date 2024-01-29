@@ -18,83 +18,83 @@ class AddNewAddressScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Form(
             child: Column(
               children: [
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       prefixIcon: Icon(Iconsax.user), labelText: 'Name'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwInputField,
                 ),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       prefixIcon: Icon(Iconsax.mobile),
                       labelText: 'Phone Number'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwInputField,
                 ),
                 Row(
                   children: [
                     Expanded(
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             prefixIcon: Icon(Iconsax.building_31),
                             labelText: 'street'),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: TSizes.spaceBtwInputField,
                     ),
                     Expanded(
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             prefixIcon: Icon(Iconsax.code),
                             labelText: 'Postal Code'),
                       ),
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwInputField,
                 ),
                 Row(
                   children: [
                     Expanded(
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             prefixIcon: Icon(Iconsax.building),
                             labelText: 'city'),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: TSizes.spaceBtwInputField,
                     ),
                     Expanded(
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             prefixIcon: Icon(Iconsax.activity),
                             labelText: 'State'),
                       ),
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwInputField,
                 ),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       prefixIcon: Icon(Iconsax.global), labelText: 'Country'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.defaultSpace,
                 ),
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton(onPressed: () {}, child: Text('Save')),
+                  child: ElevatedButton(onPressed: () {}, child: const Text('Save')),
                 )
               ],
             ),

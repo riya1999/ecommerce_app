@@ -13,10 +13,10 @@ class TOrderListIteam extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       itemCount: 5,
-      separatorBuilder: (_,index) => SizedBox(height: TSizes.spaceBtwIteams),
+      separatorBuilder: (_,index) => const SizedBox(height: TSizes.spaceBtwIteams),
       itemBuilder: (_,index) => TRoundedContainer(
         showBorder: true,
-        padding: EdgeInsets.all(TSizes.md),
+        padding: const EdgeInsets.all(TSizes.md),
         backgroundColor:
             THelperFunction.isDarkMode(context) ? TColors.dark : TColors.light,
         child: Column(
@@ -53,10 +53,10 @@ class TOrderListIteam extends StatelessWidget {
                     ],
                   ),
                 ),
-                IconButton(onPressed: (){}, icon: Icon(Iconsax.arrow_right_34,size: TSizes.iconsSm,))
+                IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right_34,size: TSizes.iconsSm,))
               ],
             ),
-            SizedBox(height: TSizes.spaceBtwIteams,),
+            const SizedBox(height: TSizes.spaceBtwIteams,),
             Row(
               children: [
                 Expanded(

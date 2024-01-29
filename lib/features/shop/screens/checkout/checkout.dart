@@ -43,7 +43,7 @@ class CheckoutScreen extends StatelessWidget {
               ),
 
               /// Coupon text field
-              TCouponCode(),
+              const TCouponCode(),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
@@ -51,7 +51,7 @@ class CheckoutScreen extends StatelessWidget {
               /// Billing Section
               TRoundedContainer(
                 showBorder: true,
-                padding: EdgeInsets.all(TSizes.md),
+                padding: const EdgeInsets.all(TSizes.md),
                 backgroundColor: dark ? TColors.black : TColors.white,
                 child: const Column(
                   children: [
@@ -85,9 +85,9 @@ class CheckoutScreen extends StatelessWidget {
               image: TImages.productImage6,
               title: 'Payment Success! ',
               subTitle: 'Your iteam will shipped soon',
-              onPressed: () => Get.to(() => NavigationMenu())
+              onPressed: () => Get.to(() => const NavigationMenu())
           )),
-          child: Text('Checkout'),
+          child: const Text('Checkout'),
         ),
       ),
     );

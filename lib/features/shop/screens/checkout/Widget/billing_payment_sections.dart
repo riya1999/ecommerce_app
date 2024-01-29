@@ -13,8 +13,8 @@ class TBillingPaymentSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TSectionHeading(title: 'Paymeny Mthod', buttonTitle: 'Change'),
-        SizedBox(
+        const TSectionHeading(title: 'Paymeny Mthod', buttonTitle: 'Change'),
+        const SizedBox(
           height: TSizes.spaceBtwIteams / 2,
         ),
         Row(
@@ -25,10 +25,10 @@ class TBillingPaymentSection extends StatelessWidget {
               backgroundColor: THelperFunction.isDarkMode(context)
                   ? TColors.light
                   : TColors.white,
-              padding: EdgeInsets.all(TSizes.sm),
-              child: Image(image: AssetImage(TImages.productImage4),fit: BoxFit.contain,),
+              padding: const EdgeInsets.all(TSizes.sm),
+              child: const Image(image: AssetImage(TImages.productImage4),fit: BoxFit.contain,),
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwIteams / 2,
             ),
             Text('Paypal', style: Theme.of(context).textTheme.bodyLarge,)

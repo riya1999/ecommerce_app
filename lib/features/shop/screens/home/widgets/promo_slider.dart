@@ -29,7 +29,7 @@ class TPromoSlider extends StatelessWidget {
                 viewportFraction: 1.1,
                 onPageChanged: (index, _) =>
                     controller.updatePageIndicator(index))),
-        SizedBox(height: TSizes.spaceBtwIteams),
+        const SizedBox(height: TSizes.spaceBtwIteams),
         Center(
           child: Obx(
             () => Row(
@@ -38,7 +38,7 @@ class TPromoSlider extends StatelessWidget {
                   TCircularContainer(
                     width: 20,
                     height: 5,
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     backgroundColor: controller.carousalCurrentIndex.value == i
                         ? TColors.primary
                         : TColors.gray,

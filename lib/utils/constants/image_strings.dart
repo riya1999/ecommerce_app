@@ -31,6 +31,9 @@ class TImages{
   static const String promoBanner2 = "assets/images/banner/promobanner.jpg";
   static const String promoBanner3 = "assets/images/banner/promobanner.jpg";
 
+  // user
+  static const String user = "assets/images/user/user.png";
+
   // -- Product
   static const String productImage1 = "assets/images/products/imgbin_air-force-1-nike-air-max-air-jordan-sports-shoes-png.png";
   static const String productImage2 = "assets/images/products/imgbin_sports-shoes-air-force-1-nike-air-max-png.png";

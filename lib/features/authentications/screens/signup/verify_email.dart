@@ -23,15 +23,15 @@ class VerifyEmailScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
               ///Image
               Image(
-                image: AssetImage(TImages.deliveredEmailIllustration),
+                image: const AssetImage(TImages.deliveredEmailIllustration),
                 width: THelperFunction.screenWidth() * 0.6,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
 
@@ -41,7 +41,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwIteams,
               ),
               Text(
@@ -49,7 +49,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwIteams,
               ),
               Text(
@@ -57,7 +57,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelSmall,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
 
@@ -69,19 +69,19 @@ class VerifyEmailScreen extends StatelessWidget {
                         image: TImages.staticSuccessIllustration,
                         title: TTexts.yourAccountCreatedTitle,
                         subTitle: TTexts.yourAccountCreatedSubTitle,
-                        onPressed: () => Get.to(() => LoginScreen()),
+                        onPressed: () => Get.to(() => const LoginScreen()),
                       )),
-                  child: Text(TTexts.tContinue),
+                  child: const Text(TTexts.tContinue),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwIteams,
               ),
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
                   onPressed: () {},
-                  child: Text(TTexts.resendEmail),
+                  child: const Text(TTexts.resendEmail),
                 ),
               ),
             ],

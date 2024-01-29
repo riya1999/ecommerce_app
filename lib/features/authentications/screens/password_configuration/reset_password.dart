@@ -16,20 +16,20 @@ class ResetPassword extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(onPressed: () => Get.back(), icon: Icon(CupertinoIcons.clear))
+          IconButton(onPressed: () => Get.back(), icon: const Icon(CupertinoIcons.clear))
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(TSizes.defaultSpace),
+        padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ///Image
             Image(
-              image: AssetImage(TImages.deliveredEmailIllustration),
+              image: const AssetImage(TImages.deliveredEmailIllustration),
               width: THelperFunction.screenWidth() * 0.6,
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwSections,
             ),
 
@@ -39,7 +39,7 @@ class ResetPassword extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwIteams,
             ),
             Text(
@@ -47,7 +47,7 @@ class ResetPassword extends StatelessWidget {
               style: Theme.of(context).textTheme.labelSmall,
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwSections,
             ),
 
@@ -56,17 +56,17 @@ class ResetPassword extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: (){} ,
-                child: Text(TTexts.done),
+                child: const Text(TTexts.done),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwIteams,
             ),
             SizedBox(
               width: double.infinity,
               child: TextButton(
                 onPressed: (){} ,
-                child: Text(TTexts.resendEmail),
+                child: const Text(TTexts.resendEmail),
               ),
             ),
           ],

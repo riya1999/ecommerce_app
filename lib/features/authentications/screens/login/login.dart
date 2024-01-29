@@ -2,7 +2,6 @@ import 'package:ecommerce_app/common/styles/spacing_styles.dart';
 import 'package:ecommerce_app/features/authentications/screens/login/widgets/login_form.dart';
 import 'package:ecommerce_app/features/authentications/screens/login/widgets/login_header.dart';
 import 'package:ecommerce_app/utils/constants/text_strings.dart';
-import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../common/widgets/login_signup/form_divider.dart';

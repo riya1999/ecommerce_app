@@ -1,10 +1,11 @@
 import 'package:ecommerce_app/common/widgets/images/t_rounded_image.dart';
+import 'package:ecommerce_app/features/shop/screens/product_details/product_details.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
-import 'package:ecommerce_app/utils/constants/enums.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../styles/shadow.dart';
 import '../../custom_shapes/container/rounded_container.dart';
@@ -22,20 +23,20 @@ class TProductCardVertical extends StatelessWidget {
 
     /// Container with side paddings, color, edges, radius and shadows.
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => ProductDetailsScreen()) ,
       child: Container(
         width: 180,
-        padding: EdgeInsets.all(1),
+        padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
             boxShadow: [TShadowStyle.verticalProductShadow],
             borderRadius: BorderRadius.circular(TSizes.productImageRadius),
-            color: dark ? TColors.darkGray : TColors.white),
+            color: dark ? TColors.darkerGray : TColors.white),
         child: Column(
           children: [
             /// Thumb nail, wishlist Button, Discount Tag
             TRoundedContainer(
               height: 180,
-              padding: EdgeInsets.all(TSizes.sm),
+              padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
                 children: [
@@ -88,11 +89,11 @@ class TProductCardVertical extends StatelessWidget {
                     smallSize: true,
                   ),
                   const SizedBox(height: TSizes.spaceBtwIteams / 2),
-                  TBrandTitleWithVerificationIcon(title: 'Nike',),
+                  TBrandTitleWithVerificationIcon(title: 'Nike',textColor: dark? TColors.white :TColors.black,),
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

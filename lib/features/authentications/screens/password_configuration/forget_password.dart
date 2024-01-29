@@ -2,7 +2,6 @@ import 'package:ecommerce_app/features/authentications/screens/password_configur
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/text_strings.dart';
@@ -15,7 +14,7 @@ class ForgetPassword extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsets.all(TSizes.defaultSpace),
+        padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -25,7 +24,7 @@ class ForgetPassword extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwIteams,
             ),
             Text(
@@ -33,15 +32,15 @@ class ForgetPassword extends StatelessWidget {
               style: Theme.of(context).textTheme.labelSmall,
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwSections * 2,
             ),
 
             /// Text Field
             TextFormField(
-              decoration: InputDecoration(labelText: TTexts.email,prefixIcon: Icon(Iconsax.direct_right)),
+              decoration: const InputDecoration(labelText: TTexts.email,prefixIcon: Icon(Iconsax.direct_right)),
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwSections ,
             ),
 
@@ -50,7 +49,7 @@ class ForgetPassword extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => Get.to(() => ResetPassword),
-                child: Text(TTexts.submit),
+                child: const Text(TTexts.submit),
               ),
             ),
           ],

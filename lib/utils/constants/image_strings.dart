@@ -20,6 +20,7 @@ class TImages{
   static const String deliveredInPlaneIllustration = "assets/images/animation/sammy-line-come-back-latter.png";
   static const String deliveredEmailIllustration = "assets/images/animation/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration = "assets/images/animation/sammy-line-man-receives-a-mail.png";
+  static const String loading = "assets/images/animation/process.gif";
 
   // category Icons
   static const String sportIcon = "assets/images/category/sammy-line-workout.gif";

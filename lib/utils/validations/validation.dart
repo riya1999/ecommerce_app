@@ -1,4 +1,11 @@
 class TValidator {
+  static String? validateEmptyText(String? fieldName, String? value) {
+    if (value == null || value.isEmpty) {
+      return '$fieldName is required';
+    }
+    return null;
+  }
+
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return 'Email is required';
@@ -13,7 +20,6 @@ class TValidator {
   }
 
   static String? validatePassword(String? value) {
-
     if (value == null || value.isEmpty) {
       return 'Password is required';
     }
@@ -24,32 +30,31 @@ class TValidator {
     }
 
     //check uppercase
-    if (value.contains(RegExp(r'[A-Z]'))) {
+    if (!value.contains(RegExp(r'[A-Z]'))) {
       return 'Password must contain at least one uppercase letter';
     }
 
     //check for number
-    if (value.contains(RegExp(r'[0-9]'))) {
+    if (!value.contains(RegExp(r'[0-9]'))) {
       return 'Password must contain at least one number';
     }
 
     //check for special character
-    if (value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+    if (!value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
       return 'Password must contain at least one special character';
     }
     return null;
   }
 
-  static String? validPhoneNumber(String? value){
-    if(value == null || value.isEmpty){
+  static String? validPhoneNumber(String? value) {
+    if (value == null || value.isEmpty) {
       return 'phone number is required';
     }
 
     final phoneRegExp = RegExp(r'^\d{10}$');
-    if(phoneRegExp.hasMatch(value)){
+    if (phoneRegExp.hasMatch(value)) {
       return 'Invalid Phone number format (10 digit required)';
     }
     return null;
-
   }
 }

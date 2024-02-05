@@ -4,7 +4,6 @@ import 'package:get_storage/get_storage.dart';
 
 import '../../../../common/widgets/loader/loaders.dart';
 import '../../../../data/repositories/authentication/authentication_repository.dart';
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/helpers/network_manager.dart';
 import '../../../../utils/popups/full_screen_loader.dart';
 
@@ -30,8 +29,7 @@ class LoginController extends GetxController {
   Future<void> emailAndPasswordSignIn() async {
     try {
       // start Loading
-      TFullScreenLoader.openLoadingDialog(
-          'Logging you in...', TImages.loading);
+      //TFullScreenLoader.openLoadingDialog('Logging you in...', TImages.loading);
 
       // check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -42,7 +40,7 @@ class LoginController extends GetxController {
 
       // Form Validation
       if (!loginFormKey.currentState!.validate()) {
-        TFullScreenLoader.stopLoading();
+      //  TFullScreenLoader.stopLoading();
         return ;
       }
 
@@ -58,7 +56,7 @@ class LoginController extends GetxController {
           email.text.trim(), password.text.trim());
 
       // Remove Loader
-      TFullScreenLoader.stopLoading();
+    //  TFullScreenLoader.stopLoading();
 
       // redirect
       AuthenticationRepository.instance.screenRedirect();

@@ -1,9 +1,9 @@
 import 'package:ecommerce_app/utils/constants/colors.dart';
-import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../common/widgets/loader/animation_loader.dart';
+import '../helpers/helper_functions.dart';
 
 class TFullScreenLoader {
   static void openLoadingDialog(String text, String animation) {
@@ -20,7 +20,7 @@ class TFullScreenLoader {
               width: double.infinity,
               child: Column(
                 children: [
-                  SizedBox(height: 250),
+                  const SizedBox(height: 250),
                   TAnimationLoaderWidget(text: text, animation: animation)
                 ],
               ),

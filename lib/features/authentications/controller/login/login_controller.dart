@@ -1,9 +1,11 @@
+import 'package:ecommerce_app/features/personalization/conterollers/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../../../../common/widgets/loader/loaders.dart';
 import '../../../../data/repositories/authentication/authentication_repository.dart';
+import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/helpers/network_manager.dart';
 import '../../../../utils/popups/full_screen_loader.dart';
 
@@ -16,20 +18,21 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController = Get.put(UserController());
 
-  @override
-  void onInit(){
-    //email.text = localStorage.read('Remember_me_email');
-    //password.text = localStorage.read('Remember_me_password');
-    super.onInit();
+  // @override
+  // void onInit(){
+  //   //email.text = localStorage.read('Remember_me_email');
+  //  // password.text = localStorage.read('Remember_me_password');
+  //   super.onInit();
+  //
+  // }
 
-  }
-
-
+  /// -- Email and password Sign in
   Future<void> emailAndPasswordSignIn() async {
     try {
       // start Loading
-      //TFullScreenLoader.openLoadingDialog('Logging you in...', TImages.loading);
+      TFullScreenLoader.openLoadingDialog('Logging you in...', TImages.loading);
 
       // check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -39,32 +42,58 @@ class LoginController extends GetxController {
       }
 
       // Form Validation
-      if (!loginFormKey.currentState!.validate()) {
-      //  TFullScreenLoader.stopLoading();
-        return ;
+      if (loginFormKey.currentState!.validate()) {
+        TFullScreenLoader.stopLoading();
+        return;
       }
 
       // remember me Check
-      if (!rememberMe.value) {
-       localStorage.write('Remember_me_email', email.text.trim());
-       localStorage.write('Remember_me_password', password.text.trim());
+      if (rememberMe.value) {
+        localStorage.write('Remember_me_email', email.text.trim());
+        localStorage.write('Remember_me_password', password.text.trim());
       }
 
       // login user using Email and password authentication
       final userCredential = await AuthenticationRepository.instance
-          .loginWithEmailAndPassword(
-          email.text.trim(), password.text.trim());
+          .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
-      // Remove Loader
-    //  TFullScreenLoader.stopLoading();
-
-      // redirect
-      AuthenticationRepository.instance.screenRedirect();
-    } catch (e) {
-      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-    } finally {
       // Remove Loader
       TFullScreenLoader.stopLoading();
+
+      // redirect
+      await Get.offAll(
+          () => AuthenticationRepository.instance.screenRedirect());
+    } catch (e) {
+      TFullScreenLoader.stopLoading();
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+    }
+  }
+
+  /// -- Google Sign in
+  Future<void> googleSignIn() async {
+    try {
+      TFullScreenLoader.openLoadingDialog('Logging you in...', TImages.loading);
+
+      // check Internet Connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        TFullScreenLoader.stopLoading();
+        return;
+      }
+
+      // Google authentication
+      final userCredential =
+          await AuthenticationRepository.instance.signInWithGoogle();
+
+      // save User Record
+      await userController.saveUserRecord(userCredential);
+
+      TFullScreenLoader.stopLoading();
+
+      AuthenticationRepository.instance.screenRedirect();
+    } catch (e) {
+      TFullScreenLoader.stopLoading();
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     }
   }
 }

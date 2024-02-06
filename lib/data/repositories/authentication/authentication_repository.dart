@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import '../../../utils/exceptions/firebase_auth_exceptions.dart';
 import '../../../utils/exceptions/firebase_exceptions.dart';
 import '../../../utils/exceptions/format_exceptions.dart';
@@ -46,7 +47,39 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+  /* -------------Social Sign-In sign-in-----------------*/
+
+  ///[GoogleAuthentication] - Google sign in
+  Future<UserCredential?> signInWithGoogle() async {
+    try {
+      // Trigar the authentication flow
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+
+      final GoogleSignInAuthentication? googleAuth =
+          await userAccount?.authentication;
+
+      // create a new credential
+      final credentials = GoogleAuthProvider.credential(
+          accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+
+      // Once a sign in , return the User credential
+      return await _auth.signInWithCredential(credentials);
+
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthExceptions(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseExceptions(e.code).message;
+    } on FormatException catch (_) {
+      throw TFormatExceptions();
+    } on PlatformException catch (e) {
+      throw TPlatformExceptions(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
   /* -------------Email & Password sign-in-----------------*/
+
   ///[EmailAuthentication] - LogIN
   Future<UserCredential> loginWithEmailAndPassword(
       String email, String password) async {
@@ -102,9 +135,10 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-  ///[LogOutUser] - Valid for any Authentication
+  ///[LogOutUser] - LogOut
   Future<void> logout() async {
     try {
+      await GoogleSignIn().signOut();
       await FirebaseAuth.instance.signOut();
       Get.offAll(() => const LoginScreen());
     } on FirebaseAuthException catch (e) {

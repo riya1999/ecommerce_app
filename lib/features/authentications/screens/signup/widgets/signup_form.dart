@@ -15,6 +15,7 @@ class TSignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignupController());
+    print('SignupController ${SignupController()}');
     return Form(
         key: controller.signupFormKey,
         child: Column(

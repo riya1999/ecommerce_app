@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/list_tile/settings_menu_tile.dart';
 import '../../../../common/widgets/list_tile/user_profile_tile.dart';
+import '../../../../data/repositories/authentication/authentication_repository.dart';
 import '../profile/profile_screen.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -108,7 +109,7 @@ class SettingScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                      onPressed: (){},
+                      onPressed: () => AuthenticationRepository.instance.logout(),
                       child: const Text('Logout'),
                     ),
                   ),

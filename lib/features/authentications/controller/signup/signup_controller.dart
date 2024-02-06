@@ -38,7 +38,7 @@ class SignupController extends GetxController {
       }
 
       // Form Validation
-      if (!signupFormKey.currentState!.validate()) {
+      if (signupFormKey.currentState!.validate()) {
         TFullScreenLoader.stopLoading();
         return ;
       }
@@ -72,11 +72,14 @@ class SignupController extends GetxController {
 
         // Show Success Message
         TLoaders.successSnackBar(
-            title: 'congregation',
+            title: 'congratulation',
             message: 'Your account has been created! Verify email to continue');
 
-        // Move to verify email Screen
-        Get.to(() => VerifyEmailScreen(email: email.text.trim(),));
+      TFullScreenLoader.stopLoading();
+
+      // Move to verify email Screen
+       await Get.to(() => VerifyEmailScreen(email: email.text.trim(),));
+
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {

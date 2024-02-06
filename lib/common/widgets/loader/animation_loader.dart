@@ -2,7 +2,6 @@ import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 class TAnimationLoaderWidget extends StatelessWidget {
   const TAnimationLoaderWidget(
@@ -27,7 +26,8 @@ class TAnimationLoaderWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Lottie.asset(animation),
+            Image.asset(animation),
+            //SizedBox(height:200,child: Lottie.asset(animation)),
             SizedBox(
               height: TSizes.defaultSpace,
             ),

@@ -3,6 +3,7 @@ import 'package:ecommerce_app/features/authentications/screens/onboarding/onboar
 import 'package:ecommerce_app/features/authentications/screens/signup/verify_email.dart';
 import 'package:ecommerce_app/navigation_menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
@@ -74,7 +75,8 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformExceptions(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again.';
+      if(kDebugMode) print('Something went wrong. Please try again. $e ') ;
+      return null;
     }
   }
 
@@ -160,6 +162,22 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+    ///[ForgotPassword] - ForgotPassword
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthExceptions(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseExceptions(e.code).message;
+    } on FormatException catch (_) {
+      throw TFormatExceptions();
+    } on PlatformException catch (e) {
+      throw TPlatformExceptions(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
   ///[LogOutUser] - LogOut
   Future<void> logout() async {
     try {

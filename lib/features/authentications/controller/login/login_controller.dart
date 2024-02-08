@@ -1,5 +1,4 @@
 
-import 'package:ecommerce_app/features/authentications/screens/signup/signup.dart';
 import 'package:ecommerce_app/features/personalization/conterollers/user_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -24,17 +23,17 @@ class LoginController extends GetxController {
   User? user;
 
 
-  @override
-  void onInit(){
-    //email.text = localStorage.read('Remember_me_email');
-   //password.text = localStorage.read('Remember_me_password');
-    super.onInit();
-
-  }
+  // @override
+  // void onInit(){
+  //   //email.text = localStorage.read('Remember_me_email');
+  //  //password.text = localStorage.read('Remember_me_password');
+  //   super.onInit();
+  //
+  // }
 
   /// -- Email and password Sign in
   Future<void> emailAndPasswordSignIn() async {
-    //try {
+    try {
       // start Loading
       TFullScreenLoader.openLoadingDialog('Logging you in...', TImages.loading);
 
@@ -47,30 +46,27 @@ class LoginController extends GetxController {
 
       // Form Validation
       if (loginFormKey.currentState!.validate()) return;
-       TFullScreenLoader.stopLoading();
+      // TFullScreenLoader.stopLoading();
 
 
       // remember me Check
-      if (rememberMe.value) {
-        localStorage.write('Remember_me_email', email.text.trim());
-        localStorage.write('Remember_me_password', password.text.trim());
-      }
+      // if (rememberMe.value) {
+      //   localStorage.write('Remember_me_email', email.text.trim());
+      //   localStorage.write('Remember_me_password', password.text.trim());
+      // }
 
       // login user using Email and password authentication
-      User? user = await AuthenticationRepository.signInUsingEmailPassword( email: email.text, password: password.text);
+       await AuthenticationRepository.signInUsingEmailPassword( email: email.text, password: password.text);
 
-      if (user != null) {
-       Get.to(() => SignUpScreen(),);
-      }
       // Remove Loader
       TFullScreenLoader.stopLoading();
 
       // redirect
       await  AuthenticationRepository.instance.screenRedirect();
-    // } catch (e) {
-    //   TFullScreenLoader.stopLoading();
-    //   TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-    // }
+    } catch (e) {
+      TFullScreenLoader.stopLoading();
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+    }
   }
 
   /// -- Google Sign in

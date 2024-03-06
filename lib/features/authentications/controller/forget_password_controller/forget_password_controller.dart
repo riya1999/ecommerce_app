@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/common/widgets/loader/loaders.dart';
-import 'package:ecommerce_app/common/widgets/success_screen/success_screen.dart';
 import 'package:ecommerce_app/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecommerce_app/features/authentications/screens/password_configuration/reset_password.dart';
 import 'package:ecommerce_app/utils/popups/full_screen_loader.dart';
@@ -17,7 +16,7 @@ class ForgetPasswordController extends GetxController {
   GlobalKey<FormState> forgetPasswordFormKey = GlobalKey<FormState>();
 
   /// Sent Reset Password EMail
-  sendPasswordResetEmail() async {
+ Future<void> sendPasswordResetEmail() async {
     try {
       TFullScreenLoader.openLoadingDialog('Processing your request', TImages.loading);
 
@@ -28,11 +27,9 @@ class ForgetPasswordController extends GetxController {
         return;
       }
 
-      if(forgetPasswordFormKey.currentState!.validate()){
-        TFullScreenLoader.stopLoading();
-        return();
-      }
+      if(forgetPasswordFormKey.currentState!.validate()) return;
 
+      TFullScreenLoader.stopLoading();
       await AuthenticationRepository.instance.sendPasswordResetEmail(email.text);
 
       TFullScreenLoader.stopLoading();

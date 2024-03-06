@@ -38,6 +38,7 @@ class NetworkManager extends GetxController {
     }
   }
 
+  @override
   void onClose(){
     super.onClose();
     _connectivitySubscription.cancel();
